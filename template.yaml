@@ -78,7 +78,8 @@ spec:
       name: Fetch Cookiecutter Template
       action: fetch:template
       input:
-        url: https://github.com/ONS-Innovation/govcookiecutter/tree/sebtheo-dev
+        url: https://github.com/ONS-Innovation/govcookiecutter.git
+        ref: sebtheo-dev
         cookiecutterCompat: true
         values:
           organisation_name: ${{ parameters.organisation_name }}
