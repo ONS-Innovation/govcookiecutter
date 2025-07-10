@@ -78,13 +78,13 @@ def set_request_template(
     # Define the file path where the request template will be moved, which is dependent
     # on the repository hosting platform. If the `dir_request_template` is not
     # initially one of `.github` or `.gitlab`, raise a `ValueError`
-    if repository_hosting_platform.lower() == "github":
+    if repository_hosting_platform == "github":
         path_request_template = Path(dir_govcookiecutter).joinpath(
-            f".{repository_hosting_platform.lower()}", "pull_request_template.md"
+            f".{repository_hosting_platform}", "pull_request_template.md"
         )
-    elif repository_hosting_platform.lower() == "gitlab":
+    elif repository_hosting_platform == "gitlab":
         path_request_template = Path(dir_govcookiecutter).joinpath(
-            f".{repository_hosting_platform.lower()}",
+            f".{repository_hosting_platform}",
             "merge_request_templates",
             "{{ cookiecutter.project_name }}.md",
         )
