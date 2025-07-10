@@ -78,10 +78,8 @@ spec:
       name: Fetch Cookiecutter Template
       action: fetch:template
       input:
-        url: https://github.com/ONS-Innovation/govcookiecutter
-        targetPath: ./
+        url: https://github.com/ONS-Innovation/govcookiecutter/tree/sebtheo-dev
         cookiecutterCompat: true
-        branch: sebtheo-dev
         values:
           organisation_name: ${{ parameters.organisation_name }}
           repository_hosting_platform: ${{ parameters.repository_hosting_platform }}
