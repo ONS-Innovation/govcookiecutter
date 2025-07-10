@@ -86,6 +86,7 @@ spec:
           organisation_handle: ${{ parameters.organisation_handle }}
           organisational_framework: ${{ parameters.organisational_framework }}
           project_name: ${{ parameters.project_name }}
+          repo_name: ${{ parameters.project_name | lower | replace(' ', '_') | replace('-', '_') }}
           overview: ${{ parameters.overview }}
           project_version: ${{ parameters.project_version }}
           locked_down_environment: ${{ parameters.locked_down_environment }}
