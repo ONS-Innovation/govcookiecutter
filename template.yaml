@@ -1,7 +1,7 @@
 apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
-  name: govcookiecutter-sebdev
+  name: govcookiecutter
   title: GOV Cookiecutter Template
   description: Template to bootstrap projects using the ONS Innovation govcookiecutter
   annotations:
