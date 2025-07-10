@@ -62,7 +62,7 @@ class TestSetRequestTemplate:
         )
 
         # Assert the correct text has been written to the correct location
-        if test_input_repository_hosting_platform.lower() == "github":
+        if test_input_repository_hosting_platform == "github":
             test_output = temporary_frameworks.parent.joinpath(
                 ".github", "pull_request_template.md"
             ).read_text()

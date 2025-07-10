@@ -200,10 +200,13 @@ def test_injected_counts_correct(
     test_input_other_context: Dict[str, str],
 ) -> None:
 
-    # Generate the expected counts
+    # Generate the expected counts - build template string safely
+    open_braces = "{" + "{"
+    close_braces = "}" + "}"
+    jinja2_template = open_braces + " cookiecutter." + test_input_variable + " " + close_braces
     test_expected_counts = replace_cookiecutter_jinja2_counts(
         test_input_variable_counts,
-        "{{{{ cookiecutter.{variable} }}}}".format(variable=test_input_variable),
+        jinja2_template,
         test_input_value,
     )
 

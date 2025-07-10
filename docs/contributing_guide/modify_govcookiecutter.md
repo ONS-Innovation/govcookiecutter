@@ -150,7 +150,7 @@ functions that we want to supply to users within the `{{ cookiecutter.repo_name 
 package. These tests should be written in `tests` or
 `{{ cookiecutter.repo_name }}/tests` as appropriate.
 
-Coverage also only covers the `hooks` and `{{ cookiecutter.repo_name }}/{{ cookiecutter.repo_name.lower().replace(' ', '_').replace('-', '_') }}` folders.
+Coverage also only covers the `hooks` and `{{ cookiecutter.repo_name }}/{{ cookiecutter.repo_name }}` folders.
 
 ### Testing Jinja templating
 
