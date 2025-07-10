@@ -1,7 +1,10 @@
 apiVersion: backstage.io/v1alpha1
-kind: Location
+kind: Component
 metadata:
-  name: cookiecutter-template-location
+  name: govcookiecutter
+  annotations:
+    github.com/project-slug: ONS-Innovation/govcookiecutter
 spec:
-  targets:
-    - ./template.yaml
+  owner: "group:default/spotify-backstage-trial-team-2"
+  type: service
+  lifecycle: experimental
