@@ -8,7 +8,7 @@ on:
 jobs:
   template-build:
 
-    runs-on: ${{ matrix.os }}
+    runs-on: ${{ '${{ matrix.os }}' }}
     strategy:
       matrix:
         # TODO: Fix R pre-commit hook issues with Windows
@@ -25,16 +25,16 @@ jobs:
         uses: actions/checkout@v4
         with:
           path: ga-govcookiecutter
-      - name: Set up Python ${{ matrix.python }}
+      - name: Set up Python ${{ '${{ matrix.python }}' }}
         uses: actions/setup-python@v4
         with:
-          python-version: ${{ matrix.python }}
-      - name: Install R ${{ matrix.R.version }}
+          python-version: ${{ '${{ matrix.python }}' }}
+      - name: Install R ${{ '${{ matrix.R.version }}' }}
         uses: r-lib/actions/setup-r@v2
         with:
-          r-version: ${{ matrix.R.version }}
-        if: ${{ matrix.R.using_r == 'Yes' }}
-      - name: Install other ${{ matrix.os }} R dependencies
+          r-version: ${{ '${{ matrix.R.version }}' }}
+        if: ${{ '${{ matrix.R.using_R == \'Yes\' }}' }}
+      - name: Install other ${{ '${{ matrix.os }}' }} R dependencies
         run: |
           sudo apt-get update
           sudo apt-get install libcurl4-openssl-dev
@@ -43,13 +43,13 @@ jobs:
           sudo apt-get install libfribidi-dev
           sudo apt -y install libfontconfig1-dev
           sudo apt-get install libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev
-        if: ${{ matrix.os == 'ubuntu-latest' && matrix.R.using_R == 'Yes' }}
+        if: ${{ '${{ matrix.os == \'ubuntu-latest\' && matrix.R.using_R == \'Yes\' }}' }}
       - name: Install extra macos R dependencies
         run: |
           brew install harfbuzz
           brew install fribidi
           brew install libgit2
-        if: ${{ matrix.os == 'macos-latest' && matrix.R.using_R == 'Yes' }}
+        if: ${{ '${{ matrix.os == \'macos-latest\' && matrix.R.using_R == \'Yes\' }}' }}
       - name: Install cookiecutter
         run: |
           if [ "$RUNNER_OS" == "Linux" ]; then
@@ -65,7 +65,7 @@ jobs:
           fi;
         shell: bash
       - name: Create project from govcookiecutter for this commit
-        run: cookiecutter ga-govcookiecutter --no-input repo_name=example using_R=${{ matrix.R.using_R }}
+        run: cookiecutter ga-govcookiecutter --no-input repo_name=example using_R=${{ '${{ matrix.R.using_R }}' }}
         shell: bash
       - name: Install requirements, and pre-commit hooks, and check Sphinx build
         run: |
