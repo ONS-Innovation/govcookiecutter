@@ -11,7 +11,7 @@ metadata:
     - govcookiecutter
 spec:
   owner: "group:default/spotify-backstage-trial-team-2"
-  type: service
+  type: system
   lifecycle: experimental
   parameters:
     - title: Project Settings
