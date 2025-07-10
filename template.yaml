@@ -1,0 +1,116 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: govcookiecutter
+  title: GOV Cookiecutter Template
+  description: Template to bootstrap projects using the ONS Innovation govcookiecutter
+  annotations:
+    github.com/project-slug: ONS-Innovation/govcookiecutter
+  tags:
+    - cookiecutter
+    - govcookiecutter
+spec:
+  owner: "group:default/spotify-backstage-trial-team-2"
+  type: system
+  lifecycle: experimental
+  parameters:
+    - title: Project Settings
+      required:
+        - organisation_name
+        - repository_hosting_platform
+        - organisation_handle
+        - organisational_framework
+        - project_name
+        - overview
+        - project_version
+        - locked_down_environment
+        - using_R
+      properties:
+        organisation_name:
+          title: Organisation Name
+          type: string
+          description: Your public sector organisation name
+        repository_hosting_platform:
+          title: Repository Hosting Platform
+          type: string
+          enum:
+            - GitHub
+            - GitLab
+          description: Where is the repository hosted?
+        organisation_handle:
+          title: Organisation Handle
+          type: string
+          description: GitHub/GitLab organisation name
+        organisational_framework:
+          title: Organisational Framework
+          type: string
+          enum:
+            - GDS
+            - N/A
+        project_name:
+          title: Project Name
+          type: string
+          description: Your new project name
+        overview:
+          title: Project Overview
+          type: string
+          description: Brief overview of your project
+        project_version:
+          title: Project Version
+          type: string
+          description: Version of your project
+          default: 0.0.1
+        locked_down_environment:
+          title: Locked Down Environment
+          type: string
+          enum:
+            - No
+            - Yes
+        using_R:
+          title: Using R?
+          type: string
+          enum:
+            - No
+            - Yes
+
+  steps:
+    - id: fetch-template
+      name: Fetch Cookiecutter Template
+      action: fetch:template
+      input:
+        url: https://github.com/ONS-Innovation/govcookiecutter
+        cookiecutterCompat: true
+        values:
+          organisation_name: ${{ parameters.organisation_name }}
+          repository_hosting_platform: ${{ parameters.repository_hosting_platform }}
+          organisation_handle: ${{ parameters.organisation_handle }}
+          organisational_framework: ${{ parameters.organisational_framework }}
+          project_name: ${{ parameters.project_name }}
+          overview: ${{ parameters.overview }}
+          project_version: ${{ parameters.project_version }}
+          locked_down_environment: ${{ parameters.locked_down_environment }}
+          using_R: ${{ parameters.using_R }}
+
+    - id: publish
+      name: Publish to GitHub
+      action: publish:github
+      input:
+        repoUrl: ${{ parameters.organisation_handle }}/${{ parameters.project_name | lower | replace(' ', '_') | replace('-', '_') }}
+        description: ${{ parameters.overview }}
+        repoVisibility: public
+        defaultBranch: main
+
+    - id: register
+      name: Register in Catalog
+      action: catalog:register
+      input:
+        repoContentsUrl: ${{ steps.publish.output.repoContentsUrl }}
+        catalogInfoPath: /catalog-info.yaml
+
+  output:
+    links:
+      - title: Repository
+        url: ${{ steps.publish.output.remoteUrl }}
+      - title: Open in Catalog
+        icon: catalog
+        entityRef: ${{ steps.register.output.entityRef }}
