@@ -203,7 +203,7 @@ def test_injected_counts_correct(
     # Generate the expected counts
     test_expected_counts = replace_cookiecutter_jinja2_counts(
         test_input_variable_counts,
-        "{{{{ cookiecutter.{variable} }}}}".format(variable=test_input_variable),
+        "{{ cookiecutter." + test_input_variable + "}}",
         test_input_value,
     )
 
