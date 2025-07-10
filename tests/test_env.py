@@ -119,7 +119,7 @@ def define_expected_env_variables(
         ):
             if (
                 d.name.upper()
-                == "{{ cookiecutter.repo_name.lower().replace(' ', '_').replace('-', '_') }}".upper()  # noqa: E501
+                == "{{ cookiecutter.repo_name }}".upper()  # noqa: E501
             ):
                 env_expected_dir_variable = loop_directories_children(
                     d, env_expected_dir_variable

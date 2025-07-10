@@ -79,7 +79,7 @@ To run the pipeline, run the following code in the terminal (either in the root 
 project, or by specifying the path to `run_pipeline.py` from elsewhere).
 
 ```shell
-python src/{{ cookiecutter.repo_name.lower().replace(' ', '_').replace('-', '_') }}/run_pipeline.py
+python src/{{ cookiecutter.repo_name }}/run_pipeline.py
 ```
 
 Alternatively, most Python IDEs allow you to run the code directly using a `run` button.
@@ -105,7 +105,7 @@ The cookiecutter template generated for each project will follow this folder str
 ```shell
 .
 ├── {{ cookiecutter.repo_name }}/
-│   └── {{ cookiecutter.repo_name.lower().replace(' ', '_').replace('-', '_') }}/
+│   └── {{ cookiecutter.repo_name }}/
 │       ├── example_modules/
 │       │   ├── __init__.py
 │       │   └── example_module.py
