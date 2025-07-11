@@ -81,9 +81,9 @@ spec:
         url: https://github.com/ONS-Innovation/govcookiecutter
         cookiecutterCompat: true
         values:
-          organisation_name: ${{ parameters.organisation_name }}
+          organisation_name: ONS-Innovation
           repository_hosting_platform: ${{ parameters.repository_hosting_platform }}
-          organisation_handle: ${{ parameters.organisation_handle }}
+          organisation_handle: ONS-Innovation
           organisational_framework: ${{ parameters.organisational_framework }}
           project_name: ${{ parameters.project_name }}
           overview: ${{ parameters.overview }}
