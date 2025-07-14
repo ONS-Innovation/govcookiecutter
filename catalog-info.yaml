@@ -1,0 +1,14 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: ${{ parameters.project_name | lower | replace(' ', '-') | replace('_', '-') }}
+  title: ${{ parameters.project_name }}
+  description: ${{ parameters.overview }}
+  tags:
+    - ${{ parameters.organisation_handle | lower }}
+    - ${{ parameters.organisational_framework | lower }}
+    - ${{ parameters.repository_hosting_platform | lower }}
+spec:
+  type: service
+  owner: ${{ parameters.organisation_handle }}
+  lifecycle: experimental
