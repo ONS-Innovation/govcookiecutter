@@ -95,7 +95,11 @@ spec:
       name: Publish to GitHub
       action: publish:github
       input:
+<<<<<<< Updated upstream
         repoUrl: ONS-Innovation/${{ parameters.project_name | lower | replace(' ', '_') | replace('-', '_') }}
+=======
+        repoUrl: https://github.com/${{ parameters.organisation_handle }}/${{ parameters.project_name | lower | replace(' ', '_') | replace('-', '_') }}
+>>>>>>> Stashed changes
         description: ${{ parameters.overview }}
         repoVisibility: public
         defaultBranch: main
