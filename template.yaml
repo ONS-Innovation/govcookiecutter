@@ -81,9 +81,9 @@ spec:
         url: https://github.com/ONS-Innovation/govcookiecutter
         cookiecutterCompat: true
         values:
-          organisation_name: ${{ parameters.organisation_name }}
+          organisation_name: ONS-Innovation
           repository_hosting_platform: ${{ parameters.repository_hosting_platform }}
-          organisation_handle: ${{ parameters.organisation_handle }}
+          organisation_handle: ONS-Innovation
           organisational_framework: ${{ parameters.organisational_framework }}
           project_name: ${{ parameters.project_name }}
           overview: ${{ parameters.overview }}
@@ -95,7 +95,15 @@ spec:
       name: Publish to GitHub
       action: publish:github
       input:
-        repoUrl: ${{ parameters.organisation_handle }}/${{ parameters.project_name | lower | replace(' ', '_') | replace('-', '_') }}
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+        repoUrl: ONS-Innovation/${{ parameters.project_name | lower | replace(' ', '_') | replace('-', '_') }}
+=======
+        repoUrl: https://github.com/${{ parameters.organisation_handle }}/${{ parameters.project_name | lower | replace(' ', '_') | replace('-', '_') }}
+>>>>>>> Stashed changes
+=======
+        repoUrl: https://github.com/${{ parameters.organisation_handle }}/${{ parameters.project_name | lower | replace(' ', '_') | replace('-', '_') }}
+>>>>>>> Stashed changes
         description: ${{ parameters.overview }}
         repoVisibility: public
         defaultBranch: main
