@@ -10,5 +10,5 @@ metadata:
     - {{ cookiecutter.repository_hosting_platform | lower }}
 spec:
   type: service
-  owner: {{ cookiecutter.organisation_handle }}
+  owner: "group:default/{{ cookiecutter.organisation_handle }}"
   lifecycle: experimental
