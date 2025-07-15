@@ -1,14 +1,14 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: ${{ values.project_name | lower | replace(' ', '-') | replace('_', '-') }}
-  title: ${{ values.project_name }}
-  description: ${{ values.overview }}
+  name: {{ cookiecutter.project_name | lower | replace(' ', '-') | replace('_', '-') }}
+  title: {{ cookiecutter.project_name }}
+  description: {{ cookiecutter.overview }}
   tags:
-    - ${{ values.organisation_handle | lower }}
-    - ${{ values.organisational_framework | lower }}
-    - ${{ values.repository_hosting_platform | lower }}
+    - {{ cookiecutter.organisation_handle | lower }}
+    - {{ cookiecutter.organisational_framework | lower }}
+    - {{ cookiecutter.repository_hosting_platform | lower }}
 spec:
   type: service
-  owner: ${{ values.organisation_handle }}
+  owner: {{ cookiecutter.organisation_handle }}
   lifecycle: experimental
