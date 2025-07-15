@@ -10,7 +10,7 @@ metadata:
     - cookiecutter
     - govcookiecutter
 spec:
-  owner: "group:default/spotify-backstage-trial-team-2"
+  owner: "group:default/spotify-backstage-trial-team"
   type: system
   lifecycle: experimental
   parameters:
