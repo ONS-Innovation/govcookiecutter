@@ -5,3 +5,6 @@ if (length(grep(pattern = "devtools", x = utils::installed.packages()[, 1])) == 
   devtools::install()
   Sys.unsetenv("R_PROFILE_USER")
 }
+# NOTE: The filename should be set in cookiecutter.json as:
+# "{{cookiecutter.using_R[0] == 'Yes' and 'startup.R'}}"
+# This ensures the file is only created if the first value of using_R is "Yes".
