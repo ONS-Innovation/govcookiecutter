@@ -100,6 +100,7 @@ spec:
         description: ${{ parameters.overview }}
         repoVisibility: public
         defaultBranch: main
+        access: ${{ user.entity.metadata.annotations['github.com/user-login'] }}
 
     - id: register
       name: Register in Catalog
