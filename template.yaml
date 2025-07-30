@@ -9,6 +9,10 @@ metadata:
   tags:
     - cookiecutter
     - govcookiecutter
+  links:
+    - url: https://github.com/best-practice-and-impact/govcookiecutter
+      title: Original govcookiecutter
+      icon: catalog
 spec:
   owner: "group:default/spotify-backstage-trial-team"
   type: system
