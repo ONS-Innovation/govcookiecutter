@@ -8,6 +8,10 @@ metadata:
     - {{ cookiecutter.organisation_handle | lower }}
     - {{ cookiecutter.organisational_framework | lower }}
     - {{ cookiecutter.repository_hosting_platform | lower }}
+  links:
+    - url: https://codespaces.new/{{ cookiecutter.organisation_handle }}/{{ cookiecutter.repo_name }}
+      title: Open Development Environment 
+      icon: scaffolder
 spec:
   type: service
   owner: "group:default/{{ cookiecutter.organisation_handle }}"
