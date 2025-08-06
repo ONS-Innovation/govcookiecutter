@@ -9,13 +9,14 @@ metadata:
   tags:
     - cookiecutter
     - govcookiecutter
+    - template
   links:
     - url: https://github.com/best-practice-and-impact/govcookiecutter
       title: Original govcookiecutter
       icon: catalog
 spec:
   owner: "group:default/spotify-backstage-trial-team"
-  type: system
+  type: template
   lifecycle: experimental
   parameters:
     - title: Project Settings
