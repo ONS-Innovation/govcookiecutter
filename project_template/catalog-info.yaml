@@ -5,17 +5,17 @@ metadata:
   title: {{ cookiecutter.project_name }}
   description: {{ cookiecutter.overview }}
   tags:
-    - {{ cookiecutter.organisation_handle | lower }}
+    - {{ cookiecutter.organisation_name | lower }}
     - {{ cookiecutter.organisational_framework | lower }}
     - {{ cookiecutter.repository_hosting_platform | lower }}
   links:
-    - url: https://codespaces.new/{{ cookiecutter.organisation_handle }}/{{ cookiecutter.repo_name }}
+    - url: https://codespaces.new/{{ cookiecutter.organisation_name }}/{{ cookiecutter.repo_name }}
       title: Open Development Environment 
       icon: scaffolder
-    - url: vscode://vscode.git/clone?url=https://github.com/{{ cookiecutter.organisation_handle }}/{{ cookiecutter.repo_name }}.git
+    - url: vscode://vscode.git/clone?url=https://github.com/{{ cookiecutter.organisation_name }}/{{ cookiecutter.repo_name }}.git
       title: Open in Local Visual Studio Code
       icon: scaffolder
 spec:
   type: service
-  owner: "group:default/{{ cookiecutter.organisation_handle }}"
+  owner: "group:default/{{ cookiecutter.organisation_name }}"
   lifecycle: experimental

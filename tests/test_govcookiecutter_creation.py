@@ -88,7 +88,6 @@ def test_repo_name_directory_correct(
 args_builds_correctly = [
     {
         "organisation_name": "org_1",
-        "organisation_handle": "handle_1",
         "contact_email": "email@1",
         "project_name": "Project_1",
         "repo_name": "repo_1",
@@ -97,7 +96,6 @@ args_builds_correctly = [
     },
     {
         "organisation_name": "org_2",
-        "organisation_handle": "handle_2",
         "contact_email": "email@2",
         "project_name": "Project_2",
         "repo_name": "repo_2",

@@ -49,7 +49,7 @@ master_doc = "index"
 
 # General information about the project.
 project = "{{ cookiecutter.project_name }}"
-author = "{{ cookiecutter.organisation_handle }}"
+author = "{{ cookiecutter.organisation_name }}"
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in

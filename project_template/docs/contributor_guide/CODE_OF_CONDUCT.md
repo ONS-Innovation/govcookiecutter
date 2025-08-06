@@ -1,6 +1,6 @@
 # Code of conduct for `{{ cookiecutter.repo_name }}`
 
-All contributors to this repository hosted by `{{ cookiecutter.organisation_handle }}` are expected to follow the
+All contributors to this repository hosted by `{{ cookiecutter.organisation_name }}` are expected to follow the
 Contributor Covenant Code of Conduct. Those working within HM Government are also expected to follow the [Civil Service
 Code][civil-service-code].
 
@@ -11,8 +11,8 @@ Code][civil-service-code].
 Where this Code of Conduct says:
 
 - "Project", we mean this {{ cookiecutter.repository_hosting_platform }} repository, `{{ cookiecutter.repo_name }}` ;
-- "Maintainer", we mean active developers of the primary project team(s) behind `{{ cookiecutter.organisation_handle }}`; and
-- "Leadership", we mean `{{ cookiecutter.organisation_handle }}` organisation owners, line managers, and other
+- "Maintainer", we mean active developers of the primary project team(s) behind `{{ cookiecutter.organisation_name }}`; and
+- "Leadership", we mean `{{ cookiecutter.organisation_name }}` organisation owners, line managers, and other
   leadership within the {{ cookiecutter.organisation_name }}.
 
 ### Our Pledge

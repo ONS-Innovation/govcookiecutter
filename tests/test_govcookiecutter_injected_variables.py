@@ -10,13 +10,6 @@ ORGANISATION_NAME_COUNT = {
     "{{ cookiecutter.organisation_name }}.": 1,
     "({{ cookiecutter.organisation_name }})": 1,
 }
-ORGANISATION_HANDLE_COUNT = {
-    '"{{ cookiecutter.organisation_handle }}"': 1,
-    "`{{ cookiecutter.organisation_handle }}`": 2,
-    'u"{{ cookiecutter.organisation_handle }}",': 0,
-    '[u"{{ cookiecutter.organisation_handle }}"],': 0,
-    '"{{ cookiecutter.organisation_handle }}",': 0,
-}
 # CONTACT_EMAIL_COUNT = {
 #    "mailto:{{ cookiecutter.contact_email }}": 2,
 #    "[{{ cookiecutter.contact_email }}][email-address].": 1,
@@ -140,11 +133,11 @@ def recursive_open_and_count_search_terms(
 args_injected_counts_correct = [
     ("organisation_name", "org_1", ORGANISATION_NAME_COUNT, {"using_R": "No"}),
     ("organisation_name", "org_2", ORGANISATION_NAME_COUNT, {"using_R": "Yes"}),
-    ("organisation_handle", "handle_1", ORGANISATION_HANDLE_COUNT, {"using_R": "No"}),
+    ("organisation_name", "org_1", ORGANISATION_NAME_COUNT, {"using_R": "No"}),
     (
-        "organisation_handle",
+        "organisation_name",
         "handle_2",
-        {**ORGANISATION_HANDLE_COUNT, '"{{ cookiecutter.organisation_handle }}",': 0},
+        {**ORGANISATION_HANDLE_COUNT, '"{{ cookiecutter.organisation_name }}",': 0},
         {"using_R": "Yes"},
     ),
     # ("contact_email", "email@1", CONTACT_EMAIL_COUNT, {"using_R": "No"}),

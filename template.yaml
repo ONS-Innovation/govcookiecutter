@@ -22,7 +22,6 @@ spec:
       required:
         - organisation_name
         - repository_hosting_platform
-        - organisation_handle
         - organisational_framework
         - project_name
         - overview
@@ -30,10 +29,6 @@ spec:
         - locked_down_environment
         - using_R
       properties:
-        organisation_name:
-          title: Organisation Name
-          type: string
-          description: Your public sector organisation name
         repository_hosting_platform:
           title: Repository Hosting Platform
           type: string
@@ -41,10 +36,12 @@ spec:
             - GitHub
             - GitLab
           description: Where is the repository hosted?
-        organisation_handle:
-          title: Organisation Handle
+          default: GitHub
+        organisation_name:
+          title: Organisation Name
           type: string
-          description: GitHub/GitLab organisation name
+          description: Your public sector organisation name
+          default: ONS-Innovation
         organisational_framework:
           title: Organisational Framework
           type: string
@@ -85,9 +82,8 @@ spec:
         url: ./project_template
         cookiecutterCompat: true
         values:
-          organisation_name: ONS-Innovation
+          organisation_name: ${{ parameters.organisation_name }}
           repository_hosting_platform: ${{ parameters.repository_hosting_platform }}
-          organisation_handle: ONS-Innovation
           organisational_framework: ${{ parameters.organisational_framework }}
           project_name: ${{ parameters.project_name }}
           overview: ${{ parameters.overview }}
@@ -100,7 +96,7 @@ spec:
       name: Publish to GitHub
       action: publish:github
       input:
-        repoUrl: github.com?owner=${{ parameters.organisation_handle }}&repo=${{ parameters.project_name }}
+        repoUrl: github.com?owner=${{ parameters.organisation_name }}&repo=${{ parameters.project_name }}
         description: ${{ parameters.overview }}
         repoVisibility: public
         defaultBranch: main
