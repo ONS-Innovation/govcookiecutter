@@ -1,1 +1,1 @@
-{{ cookiecutter.catalog_owner }}
+*       {{ cookiecutter.github_owner }}
