@@ -15,6 +15,9 @@ metadata:
     - url: vscode://vscode.git/clone?url=https://github.com/{{ cookiecutter.organisation_name }}/{{ cookiecutter.repo_name }}.git
       title: Open in Local Visual Studio Code
       icon: scaffolder
+  annotations:
+    backstage.io/source-template: "gov-cookiecutter-template"
+
 spec:
   type: service
   owner: {{ cookiecutter.catalog_owner | dump }}
