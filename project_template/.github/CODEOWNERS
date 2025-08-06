@@ -1,1 +1,1 @@
-*       {{ cookiecutter.github_owner }}
+@{{ cookiecutter.github_owner }}
