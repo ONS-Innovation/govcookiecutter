@@ -64,9 +64,9 @@ spec:
           ui:options:
             catalogFilter:
               - kind: User
-                metadata.annotations.github.com/user-login: '*'
+                metadata.annotations.github.com/user-login: { exists: true }
               - kind: Group
-                metadata.annotations.github.com/team-slug: '*'
+                metadata.annotations.github.com/team-slug: { exists: true }
 
         project_version:
           title: Project Version
