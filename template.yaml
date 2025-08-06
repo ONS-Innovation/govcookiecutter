@@ -62,7 +62,15 @@ spec:
           ui:field: OwnerPicker
           ui:options:
             catalogFilter:
-              kind: [User, Group]
+              - kind: User
+                metadata:
+                  annotations:
+                    github.com/user-login: '*'
+              - kind: Group
+                metadata:
+                  annotations:
+                    github.com/team-slug: '*'
+
         project_version:
           title: Project Version
           type: string
