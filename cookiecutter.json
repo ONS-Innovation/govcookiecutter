@@ -7,5 +7,6 @@
   "overview": "Brief overview of your project.",
   "project_version": "0.0.1",
   "locked_down_environment": ["No", "Yes"],
-  "using_R": ["No", "Yes"]
+  "using_R": ["No", "Yes"],
+  "catalog_owner": "Your team name"
 }

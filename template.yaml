@@ -28,6 +28,7 @@ spec:
         - project_version
         - locked_down_environment
         - using_R
+        - catalog_owner
       properties:
         repository_hosting_platform:
           title: Repository Hosting Platform
@@ -53,9 +54,17 @@ spec:
           type: string
           description: Your new project name
         overview:
-          title: Project Overview
+          title: Description
           type: string
           description: Brief overview of your project
+        catalog_owner:
+          title: Catalog Owner
+          type: string
+          description: Who owns your repository? (user or group)
+          ui:field: OwnerPicker
+          ui:options:
+            catalogFilter:
+              kind: [User, Group]
         project_version:
           title: Project Version
           type: string
@@ -75,6 +84,11 @@ spec:
             - Yes
 
   steps:
+    - id: fetch-entity
+      name: Fetch Catalog Entity
+      action: catalog:fetch
+      input:
+        entityRef: ${{ parameters.catalog_owner }}
     - id: fetch-template
       name: Fetch Cookiecutter Template
       action: fetch:template
@@ -91,6 +105,7 @@ spec:
           locked_down_environment: ${{ parameters.locked_down_environment }}
           using_R: ${{ parameters.using_R }}
           repo_name: ${{ parameters.project_name | lower | replace(' ', '-') | replace('_', '-') }}
+          catalog_owner: ${{ steps['fetch-entity'].output.entity.metadata.annotations['github.com/team-slug'] || steps['fetch-entity'].output.entity.metadata.annotations['github.com/user-login'] }}
 
     - id: publish
       name: Publish to GitHub

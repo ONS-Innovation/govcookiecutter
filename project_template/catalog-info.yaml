@@ -17,5 +17,5 @@ metadata:
       icon: scaffolder
 spec:
   type: service
-  owner: "group:default/{{ cookiecutter.organisation_name }}"
+  owner: "group:default/{{ cookiecutter.catalog_owner }}"
   lifecycle: experimental
