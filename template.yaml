@@ -39,7 +39,9 @@ spec:
         organisation_name:
           title: Organisation Name
           type: string
-          description: What is your GitHub organisation name? (e.g. ONS-Innovation, ONSDigital)
+          enum:
+            - ONS-Innovation
+          description: What is the organisation name? (e.g. ONS-Innovation)
           default: ONS-Innovation
         organisational_framework:
           title: Organisational Framework
