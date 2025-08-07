@@ -6,7 +6,7 @@ metadata:
   description: Template to bootstrap projects using the ONS Innovation govcookiecutter
   annotations:
     github.com/project-slug: ONS-Innovation/govcookiecutter
-    backstage.io/techdocs-ref: dir:docs
+    backstage.io/techdocs-ref: dir:.
   tags:
     - cookiecutter
     - govcookiecutter

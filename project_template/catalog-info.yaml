@@ -17,7 +17,7 @@ metadata:
       icon: scaffolder
   annotations:
     backstage.io/source-template: "gov-cookiecutter-template"
-    backstage.io/techdocs-ref: dir:docs
+    backstage.io/techdocs-ref: .dir:docs
 
 spec:
   type: service
