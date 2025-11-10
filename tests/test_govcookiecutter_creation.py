@@ -107,7 +107,7 @@ args_builds_correctly = [
 
 @pytest.mark.parametrize("test_input_context", args_builds_correctly)
 @pytest.mark.parametrize("test_input_repository_hosting_platform", ["GitHub", "GitLab"])
-@pytest.mark.parametrize("test_input_organisational_framework", ["GDS", "N/A"])
+@pytest.mark.parametrize("test_input_organisational_framework", ["GDS", "None"])
 @pytest.mark.parametrize("test_input_using_r", ["No", "Yes"])
 @pytest.mark.parametrize("test_input_locked_down_environment", ["Yes", "No"])
 def test_builds_correctly(

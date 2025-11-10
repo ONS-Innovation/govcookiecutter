@@ -138,8 +138,8 @@ if __name__ == "__main__":
     # Define the folder path to `.govcookiecutter`
     DIR_GOVCOOKIECUTTER = Path(".govcookiecutter")
 
-    # Check `{{ cookiecutter.organisational_framework }}` is not `N/A`
-    if "{{ cookiecutter.organisational_framework }}" != "N/A":
+    # Check `{{ cookiecutter.organisational_framework }}` is not `None`
+    if "{{ cookiecutter.organisational_framework }}" != "None":
 
         # Define the folder path to the specific organisation framework of interest in
         # the `organisational_frameworks`
