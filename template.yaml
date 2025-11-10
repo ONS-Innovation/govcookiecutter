@@ -46,11 +46,11 @@ spec:
           default: ONS-Innovation
         organisational_framework:
           title: Organisational Framework
-          description: What organisational framework are you using? (GDS or N/A)
+          description: What organisational framework are you using? (GDS or None)
           type: string
           enum:
             - GDS
-            - N/A
+            - None
         project_name:
           title: Project Name
           type: string
