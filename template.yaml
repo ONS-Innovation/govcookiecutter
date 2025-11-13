@@ -55,6 +55,7 @@ spec:
           title: Project Name
           type: string
           description: What is your new project name?
+          pattern: '^[^ ]+$'
         overview:
           title: Description
           type: string
